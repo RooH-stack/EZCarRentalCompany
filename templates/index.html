@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<body> 
+    <h1> Journey Price Quote </h1><br>
+    <form action="{{ url_for('predict')}}" method="post">
+        <label> City name :  </label>
+        <select id="cityName" name="City name">
+            <option value="San Francisco">San Francisco</option>
+            <option value="Boston">Boston</option>
+            <option value="Oakland">Oakland</option>
+            <option value="Washington">Washington</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Berkeley">Berkeley</option>
+            <option value="Daly City">Daly City</option>
+            <option value="Cambridge">Cambridge</option>
+            <option value="San Bruno">San Bruno</option>
+            <option value="Boston">Boston</option>
+            <option value="Brookline">Brookline</option>
+            <option value="San Mateo">San Mateo</option>
+            <option value="Hayward">Hayward</option>
+            <option value="Arlington">Arlington</option>
+        </select> <br><br>
+        Journey starting date :  <input type="date", name='JourneyStartingDate' value="{{ request.form['JourneyStartingDate'] }}"> <br><br>
+        Journey starting time :  <input type="time", name='JourneyStartingTime' value="{{ request.form['JourneyStartingTime'] }}"> <br><br>
+        Journey duration in hours : <input type="number", name='JourneyDurationInHours' value="{{ request.form['JourneyDurationInHours'] }}"> <br><br><br>
+        </b>
+        <input type="submit" , value='Get quote' >
+    </form>
+    <br>
+    <br>
+    <h3>
+    {{ prediction_text }}
+    </h3>
+</body>
+</html>
