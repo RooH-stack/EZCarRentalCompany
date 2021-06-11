@@ -111,7 +111,7 @@ y = dfJourneys.iloc[:, 2]
 
 
 # model
-fit_RF = RandomForestRegressor(n_estimators = 10).fit(X,y)
+fit_RF = RandomForestRegressor(max_depth=9, n_estimators=15, random_state=0).fit(X,y)
 
 
 # Saving model to disk
